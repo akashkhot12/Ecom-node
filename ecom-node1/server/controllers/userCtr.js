@@ -108,6 +108,17 @@ const userController = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+    getUser: async (req, res) => {
+        try {
+            const user = await Users.findById(req.user.id).select('-password')
+
+            if (!user) return res.status(400).json({ msg: "User not found." });
+
+            res.json(user)
+        } catch (error) {
+
+        }
     }
 };
 
