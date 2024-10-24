@@ -25,8 +25,8 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    images: {
-        type: Object,
+    images: { // Adjust this to be an object
+        type: Object, // You can further define the structure of the object if needed
         required: true
     },
     category: {
@@ -43,6 +43,6 @@ const productSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true
-})
+});
 
-modeule.exports = mongoose.model('Products', productSchema);
+module.exports = mongoose.model('Products', productSchema);
