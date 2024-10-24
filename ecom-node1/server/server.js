@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = require('./routes/useRoutes');
+const categoryRouter = require('./routes/categoryRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cookieParser = require('cookie-parser');
@@ -21,6 +22,7 @@ mongoose.connect(URI).then(() => {
 });
 
 app.use('/user', router);
+app.use('/api', categoryRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
