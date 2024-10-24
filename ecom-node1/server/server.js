@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const router = require('./routes/useRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 app.use(express.json());
